@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LET ME THE QUESTIONS</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .examples{
+            margin-top: 65px;
+        }
+        body{
+            background-color: bisque;
+        }
+        
+    </style>
+</head>
+<body onload="printTable()"></body>>
+    <!-- header section starts  -->
+        
+    <header>
+
+        <div id="menu-bar" class="fas fa-bars"></div>
+
+        <a href="./admin.html" class="logo"><span>L</span>MTQ</a>
+
+        <nav class="navbar">
+            <a href="admin.html">Trang chủ</a>
+            <a href="question-revise.html">Các câu hỏi</a>
+            <a href="./exampleadmin.html">câu hỏi đã duyệt </a>
+            <a href="choduyet.html">Câu hỏi chờ duyệt</a>
+            <a href="koduyet.html">Câu hỏi không được duyệt</a>
+            <a href="./reviewadmin.html">review</a>
+            <a href="contactadmin.html">phản hồi</a>
+            
+        </nav>
+        
+        <div class="icons">
+                
+            <i class="fas fa-user" id="login-btn"></i>
+            <div class="icons-content">
+                <a href="./new_login.html"><i class="fas fa-sign-in-alt"></i>đăng nhập</a>
+                <a href="./new_signup.html"><i class="far fa-registered"></i>đăng kí</a>
+                <a><i class="fas fa-sign-out-alt"></i><button onclick="removeData()">Log out</button></a>
+                
+            </div>
+        </div>
+
+    
+
+    </header>
+
+    <!-- header section ends -->
+    <!-- example section starts  -->
+
+    <section class="examples" id="examples">
+        
+
+        <h1 class="heading">
+            <span>c</span>
+            <span>a</span>
+            <span>u</span>
+            <span class="space"></span>
+            <span>h</span>
+            <span>o</span>
+            <span>i</span>
+            <span class="space"></span>
+            <span>d</span>
+            <span>a</span>
+            <span class="space"></span>
+            <span>d</span>
+            <span>u</span>
+            <span>y</span>
+            <span>e</span>
+            <span>t</span>
+        </h1>
+
+    
+        
+        
+            <div class="form">
+                
+        
+                <table border="1" width="100%" cellspacing="0" cellpadding="10" id="table-content"> 
+                    
+                </table>
+            </div>
+        
+            <script type="text/javascript">
+                function printTable(){
+                    var listData = JSON.parse(localStorage.getItem('listDataQuestion')) ;
+                    var question = `<tr>
+                                        <th>STT</th>
+                                        <th>Loại câu hỏi</th>
+                                        <th>Câu hỏi</th>
+                                        <th>Đáp án</th>
+                                        <th>Đáp án đúng</th>
+                                        <th>Thời gian gửi</th>
+                                        <th>Trạng thái</th>
+                                    </tr>`
+                    
+                    listData.map((value, index) => {
+                        if(value.status === "Đã được duyệt"){
+        
+                            question +=  `<tr>
+                                            <td>${index + 1}</td>
+                                            <td>${value.chose}</td>
+                                            <td>${value.question}</td>
+                                            <td>${value.answer}</td>
+                                            <td>${value.right_answer}</td>
+                                            <td>${value.time}</td>
+                                            <td>${value.status}</td>
+                                        </tr>`
+                        }
+                    })
+                    document.getElementById('table-content').innerHTML = question;
+        
+                    
+                }
+            </script>
+        </body>
+
+    </section>
+
+    <!-- examples section ends -->
+
+    <script src="main.js"></script>
+    </body>
+</html>

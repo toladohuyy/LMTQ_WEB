@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LET ME THE QUESTIONS</title>
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <!-- header section starts  -->
+
+    <header>
+
+        <div id="menu-bar" class="fas fa-bars"></div>
+
+        <a href="#" class="logo"><span>L</span>MTQ</a>
+
+        <nav class="navbar">
+            <a href="admin.html">Trang chủ</a>
+            <a href="question-revise.html">Các câu hỏi</a>
+            <a href="./exampleadmin.html">câu hỏi đã duyệt </a>
+            <a href="choduyet.html">Câu hỏi chờ duyệt</a>
+            <a href="koduyet.html">Câu hỏi không được duyệt</a>
+            <a href="./reviewadmin.html">review</a>
+            <a href="contactadmin.html">phản hồi</a>
+            
+        </nav>
+        
+        <div class="icons">
+                
+            <i class="fas fa-user" id="login-btn"></i>
+            <div class="icons-content">
+                <a href="./new_login.html"><i class="fas fa-sign-in-alt"></i>đăng nhập</a>
+                <a href="./new_signup.html"><i class="far fa-registered"></i>đăng kí</a>
+                <a><i class="fas fa-sign-out-alt"></i><button onclick="removeData()">Log out</button></a>
+                
+            </div>
+        </div>
+    
+
+    </header>
+
+    <!-- header section ends -->
+
+    <!-- home section starts  -->
+
+    <section class="home" id="home" >
+
+        <div class="content">
+            <h3>trang chủ admin</h3>
+            <p>duyệt câu hỏi thôi nào  ^^</p>
+            <a href="./question-revise.html" class="btn">bắt đầu thôi nào !!</a>
+        </div>
+
+        
+        <div class="video-container">
+            <video src="./images/vid-5.mp4" id="video-slider" loop autoplay muted></video>
+        </div>
+
+    </section>
+
+    <!-- home section ends -->
+
+    <script src="main.js"></script>
+</body>
+</html>
